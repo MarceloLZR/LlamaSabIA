@@ -3,6 +3,7 @@ class CourseViewer {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
     this.currentExerciseIndex = 0;
+    this.aiModalOpen = false;
   }
 
   // Renderizar lista de cursos
@@ -114,37 +115,45 @@ class CourseViewer {
     }).join('');
     
     this.container.innerHTML = `
-      <div class="sheet-viewer">
-        <div class="sheet-sidebar">
+      <div class="sheet-content-wrapper">
+        <div class="sheet-header">
           <button onclick="courseViewer.loadCourse('${coursesManager.currentCourse.id}')" class="back-button">
             ← Volver al Curso
           </button>
-          
-          <div class="ai-assistant-box">
-            <h4>🤖 Asistente IA</h4>
-            <p>Pregúntame sobre esta hoja</p>
-            <textarea id="aiQuestion" placeholder="Ej: ¿Puedes explicarme el método Pomodoro?"></textarea>
-            <button onclick="courseViewer.askAI()" class="ai-button">Preguntar</button>
-            <div id="aiResponse" class="ai-response"></div>
-          </div>
+          <h2>${sheet.title}</h2>
+          <span class="sheet-duration">⏱️ ${sheet.duration}</span>
         </div>
         
-        <div class="sheet-content">
-          <div class="sheet-header">
-            <h2>${sheet.title}</h2>
-            <span class="sheet-duration">⏱️ ${sheet.duration}</span>
+        <div class="sheet-body">
+          ${contentHtml}
+        </div>
+        
+        ${sheet.exercises.length > 0 ? `
+          <div class="sheet-exercises">
+            <h3>📝 Test de Calentamiento</h3>
+            <div id="exerciseContainer"></div>
           </div>
-          
-          <div class="sheet-body">
-            ${contentHtml}
+        ` : ''}
+      </div>
+      
+      <!-- Botón flotante de IA -->
+      <button class="ai-float-button" onclick="courseViewer.toggleAIModal()" title="Asistente IA">
+        🦙
+      </button>
+      
+      <!-- Modal de IA -->
+      <div id="aiModal" class="ai-modal" style="display: none;">
+        <div class="ai-modal-content">
+          <div class="ai-modal-header">
+            <h4>🦙 Asistente IA</h4>
+            <button class="ai-close-btn" onclick="courseViewer.toggleAIModal()">✕</button>
           </div>
-          
-          ${sheet.exercises.length > 0 ? `
-            <div class="sheet-exercises">
-              <h3>📝 Test de Calentamiento</h3>
-              <div id="exerciseContainer"></div>
-            </div>
-          ` : ''}
+          <div class="ai-modal-body">
+            <p class="ai-hint">Pregúntame sobre esta hoja</p>
+            <textarea id="aiQuestion" placeholder="Ej: ¿Puedes explicarme el método Pomodoro?" rows="3"></textarea>
+            <button onclick="courseViewer.askAI()" class="ai-ask-button">Preguntar 🚀</button>
+            <div id="aiResponse" class="ai-response"></div>
+          </div>
         </div>
       </div>
     `;
@@ -152,6 +161,13 @@ class CourseViewer {
     if (sheet.exercises.length > 0) {
       this.renderExercise(sheet.exercises[this.currentExerciseIndex], chapterId, sheetId);
     }
+  }
+
+  // Toggle modal de IA
+  toggleAIModal() {
+    const modal = document.getElementById('aiModal');
+    this.aiModalOpen = !this.aiModalOpen;
+    modal.style.display = this.aiModalOpen ? 'flex' : 'none';
   }
 
   // Renderizar ejercicio
