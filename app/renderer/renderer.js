@@ -23,6 +23,13 @@ navItems.forEach(item => {
     views.forEach(view => {
       if (view.id === `${viewName}View`) {
         view.classList.remove('hidden');
+        
+        // Si es la vista de cursos, cargar la lista
+        if (viewName === 'courses' && typeof courseViewer !== 'undefined') {
+          setTimeout(() => {
+            courseViewer.showCourseList();
+          }, 100);
+        }
       } else {
         view.classList.add('hidden');
       }

@@ -1,0 +1,114 @@
+{
+  "id": "fundamentos-ia",
+  "title": "Fundamentos de Matemática para IA",
+  "description": "Sprint enfocado en entender las funciones de activación desde cero",
+  "duration": "3 semanas",
+  "difficulty": "Principiante",
+  "icon": "🧮",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introducción al Sprint",
+      "sheets": [
+        {
+          "id": 1,
+          "title": "Bienvenida al Curso",
+          "duration": "15 min",
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "# ¡Bienvenido al Sprint!\n\n¡Te damos la bienvenida a nuestro primer módulo! Primero, **agradecerte** porque ya eres parte de este proyecto y además tienes esas ganas de aprender.\n\nEste Sprint llamado **\"Minicurso Fundamentos de Matemática para IA\"** tiene por objetivo que logres entender algo llamado **\"Funciones de activación\"**, ya que buscamos adentrarnos en este mundo de la Inteligencia Artificial.\n\nEs primordial entenderla desde adentro y dejar de verla como una **\"caja negra\"**."
+              },
+              {
+                "type": "warning",
+                "content": "⏰ **Ten paciencia**: Las matemáticas pueden tomar tiempo en entenderse. ¡No te desanimes!"
+              },
+              {
+                "type": "text",
+                "content": "## 🎯 Cómo Funciona la Plataforma\n\n### Estructura del Sprint\n\n1. **Sprint** → Complétalo en mínimo 3 semanas\n2. **Capítulos** → Divididos en temas específicos\n3. **Hojas de Estudio** → Cada una te enseña algo nuevo (15-30 min)\n\n### Metodología de Aprendizaje\n\n📄 **En cada hoja:**\n- Aprenderás un concepto nuevo\n- Harás ejercicios con papel y lápiz\n- Responderás preguntas para desbloquear la siguiente\n\n🤖 **LLaMaSabIA te ayudará:**\n- Resuelve dudas sobre el capítulo actual\n- Explica conceptos de diferentes maneras\n- **NO te resolverá los ejercicios** (aprenderás haciéndolos tú)\n\n⏱️ **Método Pomodoro (Recomendado):**\n- 25 minutos de estudio\n- 5 minutos de descanso\n- Repite el ciclo"
+              },
+              {
+                "type": "info",
+                "content": "💡 **Tip**: Si una hoja te toma más de 30 minutos, es completamente normal. Tómate el tiempo que necesites."
+              },
+              {
+                "type": "text",
+                "content": "## 🏆 Evaluación y Proyecto Final\n\n### Durante el Sprint:\n- Completa todas las hojas de estudio\n- Realiza los ejercicios propuestos\n- Responde las preguntas de control\n- Habrá un **repaso total** al final de cada capítulo\n\n### Proyecto Final:\n- Aplicarás todo lo aprendido\n- Recibirás instrucciones detalladas\n- Compartirás tu proyecto vía QR\n- Verás proyectos de otros estudiantes\n- Recibirás retroalimentación de la comunidad"
+              },
+              {
+                "type": "success",
+                "content": "🚀 **¡Estás listo!** Esperamos que te diviertas en este camino de aprendizaje. ¡Mucha suerte y a darle al coco!"
+              }
+            ]
+          },
+          "exercises": [
+            {
+              "id": 1,
+              "question": "¿Cuál es el objetivo principal de este Sprint?",
+              "type": "multiple_choice",
+              "options": [
+                "Aprender a programar",
+                "Entender las funciones de activación",
+                "Crear una IA desde cero",
+                "Dominar todas las matemáticas"
+              ],
+              "correct": 1,
+              "explanation": "El objetivo es entender las funciones de activación para adentrarnos en la IA."
+            },
+            {
+              "id": 2,
+              "question": "¿Cuánto tiempo aproximado te tomará cada hoja de estudio?",
+              "type": "multiple_choice",
+              "options": [
+                "5-10 minutos",
+                "15-30 minutos",
+                "1-2 horas",
+                "Todo el día"
+              ],
+              "correct": 1,
+              "explanation": "Cada hoja está diseñada para tomar entre 15 y 30 minutos, aunque puedes tomarte más tiempo si lo necesitas."
+            },
+            {
+              "id": 3,
+              "question": "¿Para qué sirve LLaMaSabIA en este curso?",
+              "type": "multiple_choice",
+              "options": [
+                "Para resolver todos los ejercicios por ti",
+                "Para responder dudas sobre el capítulo actual",
+                "Para hacer el proyecto final",
+                "Para calificar tus respuestas"
+              ],
+              "correct": 1,
+              "explanation": "LLaMaSabIA está para resolver tus dudas y explicar conceptos, pero NO para hacer los ejercicios por ti."
+            },
+            {
+              "id": 4,
+              "question": "¿Qué técnica de estudio se recomienda en el curso?",
+              "type": "text",
+              "answer": "pomodoro",
+              "explanation": "El método Pomodoro (25 min estudio, 5 min descanso) ayuda a mantener la concentración."
+            }
+          ],
+          "unlocked": true
+        },
+        {
+          "id": 2,
+          "title": "¿Qué es la Inteligencia Artificial?",
+          "duration": "20 min",
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "# ¿Qué es la IA?\n\nLa Inteligencia Artificial es...\n\n(Aquí irá tu contenido)"
+              }
+            ]
+          },
+          "exercises": [],
+          "unlocked": false
+        }
+      ]
+    }
+  ],
+  "aiContext": "Este es un curso de fundamentos de matemática para IA enfocado en funciones de activación. El estudiante está aprendiendo desde cero. Responde dudas de forma pedagógica, con ejemplos simples. NO resuelvas los ejercicios directamente, guía al estudiante para que llegue a la respuesta por sí mismo."
+}

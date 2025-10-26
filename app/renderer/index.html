@@ -23,7 +23,6 @@
         <button class="nav-item" data-view="courses">
           <span class="nav-icon">📚</span>
           <span class="nav-text">Cursos</span>
-          <span class="badge">Próximamente</span>
         </button>
         <button class="nav-item" data-view="about">
           <span class="nav-icon">ℹ️</span>
@@ -77,61 +76,9 @@
         </div>
       </div>
 
-      <!-- Vista de Cursos (Preparada para futuro) -->
+      <!-- Vista de Cursos (ACTIVA) -->
       <div class="view hidden" id="coursesView">
-        <div class="view-header">
-          <h1>📚 Módulo de Cursos</h1>
-          <p class="subtitle">Aprende con IA personalizada</p>
-        </div>
-        
-        <div class="courses-grid">
-          <div class="course-card coming-soon">
-            <div class="course-icon">💻</div>
-            <h3>Programación Básica</h3>
-            <p>Aprende a programar desde cero con asistente IA que sigue tu progreso</p>
-            <div class="course-meta">
-              <span>🎯 10 lecciones</span>
-              <span>⏱️ 20 horas</span>
-            </div>
-            <div class="coming-soon-badge">Próximamente</div>
-          </div>
-          
-          <div class="course-card coming-soon">
-            <div class="course-icon">🌐</div>
-            <h3>Desarrollo Web</h3>
-            <p>HTML, CSS y JavaScript con proyectos prácticos</p>
-            <div class="course-meta">
-              <span>🎯 15 lecciones</span>
-              <span>⏱️ 30 horas</span>
-            </div>
-            <div class="coming-soon-badge">Próximamente</div>
-          </div>
-          
-          <div class="course-card coming-soon">
-            <div class="course-icon">🐍</div>
-            <h3>Python desde Cero</h3>
-            <p>Fundamentos de Python con ejercicios guiados por IA</p>
-            <div class="course-meta">
-              <span>🎯 12 lecciones</span>
-              <span>⏱️ 25 horas</span>
-            </div>
-            <div class="coming-soon-badge">Próximamente</div>
-          </div>
-        </div>
-        
-        <div class="info-box">
-          <h4>🚀 Sistema de Aprendizaje Inteligente</h4>
-          <p>
-            El módulo de cursos incluirá un asistente IA que:
-          </p>
-          <ul>
-            <li>✅ Sigue tu progreso en tiempo real</li>
-            <li>✅ Adapta las explicaciones a tu nivel</li>
-            <li>✅ Genera ejercicios personalizados</li>
-            <li>✅ Responde dudas específicas del curso</li>
-            <li>✅ Evalúa tu código y da feedback instantáneo</li>
-          </ul>
-        </div>
+        <!-- El contenido se genera dinámicamente por course-viewer.js -->
       </div>
 
       <!-- Vista Acerca de -->
@@ -225,6 +172,25 @@
     </main>
   </div>
 
+  <!-- Scripts -->
+  <script src="courses/courses-manager.js"></script>
+  <script src="courses/course-viewer.js"></script>
   <script src="renderer.js"></script>
+  
+  <!-- Inicializar cursos después de cargar todo -->
+  <script>
+    // Esperar a que todo esté listo
+    window.addEventListener('DOMContentLoaded', () => {
+      console.log('✅ DOM listo');
+      console.log('coursesManager:', typeof coursesManager);
+      console.log('courseViewer:', typeof courseViewer);
+      
+      // Inicializar courseViewer si no existe
+      if (typeof courseViewer === 'undefined') {
+        console.log('⚠️ Creando courseViewer...');
+        window.courseViewer = new CourseViewer('coursesView');
+      }
+    });
+  </script>
 </body>
 </html>
