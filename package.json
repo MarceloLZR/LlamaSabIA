@@ -8,7 +8,13 @@
     "build:portable": "electron-builder --win portable --config",
     "download:model": "node scripts/download-model.js"
   },
-  "keywords": ["ai", "offline", "education", "llama", "portable"],
+  "keywords": [
+    "ai",
+    "offline",
+    "education",
+    "llama",
+    "portable"
+  ],
   "author": "Tu Nombre",
   "license": "MIT",
   "devDependencies": {
@@ -29,16 +35,23 @@
       {
         "from": "engine/",
         "to": "engine/",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       },
       {
         "from": "models/",
         "to": "models/",
-        "filter": ["**/*.gguf"]
+        "filter": [
+          "**/*.gguf"
+        ]
       }
     ],
     "portable": {
       "artifactName": "${productName}-${version}-portable.exe"
     }
+  },
+  "dependencies": {
+    "marked": "^16.4.1"
   }
 }

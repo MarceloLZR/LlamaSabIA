@@ -29,7 +29,8 @@ class CoursesManager {
         this.progress[courseId] = {
           startedAt: new Date().toISOString(),
           completedSheets: [],
-          scores: {}
+          scores: {},
+          testProgress: {} // Guardar progreso de tests
         };
         this.saveProgress();
       }
@@ -60,7 +61,14 @@ class CoursesManager {
     // La primera hoja siempre está desbloqueada
     if (sheet.unlocked) return true;
     
-    // Verificar si la hoja anterior está completada
+    // Si es un TEST, verificar que se completó la hoja requerida
+    if (sheet.type === 'test' && sheet.requiresCompletion) {
+      const requiredSheetId = sheet.requiresCompletion;
+      const progressKey = `${this.currentCourse.id}-${chapterId}-${requiredSheetId}`;
+      return this.progress[this.currentCourse.id]?.completedSheets.includes(progressKey);
+    }
+    
+    // Para hojas normales, verificar que la anterior esté completada
     const prevSheetId = sheetId - 1;
     const progressKey = `${this.currentCourse.id}-${chapterId}-${prevSheetId}`;
     
@@ -76,13 +84,36 @@ class CoursesManager {
     }
     
     this.progress[this.currentCourse.id].scores[progressKey] = score;
+    
+    // Limpiar progreso del test si existe
+    delete this.progress[this.currentCourse.id].testProgress[progressKey];
+    
     this.saveProgress();
     
-    // Desbloquear siguiente hoja
-    const nextSheet = this.getSheet(chapterId, sheetId + 1);
-    if (nextSheet) {
-      nextSheet.unlocked = true;
+    console.log(`✅ Hoja ${sheetId} completada con score: ${score}%`);
+  }
+
+  // Guardar progreso de test (qué pregunta va)
+  saveTestProgress(chapterId, sheetId, exerciseIndex, answers = []) {
+    const progressKey = `${this.currentCourse.id}-${chapterId}-${sheetId}`;
+    
+    if (!this.progress[this.currentCourse.id].testProgress) {
+      this.progress[this.currentCourse.id].testProgress = {};
     }
+    
+    this.progress[this.currentCourse.id].testProgress[progressKey] = {
+      currentExercise: exerciseIndex,
+      answers: answers,
+      lastUpdate: new Date().toISOString()
+    };
+    
+    this.saveProgress();
+  }
+
+  // Obtener progreso de test
+  getTestProgress(chapterId, sheetId) {
+    const progressKey = `${this.currentCourse.id}-${chapterId}-${sheetId}`;
+    return this.progress[this.currentCourse.id]?.testProgress?.[progressKey] || null;
   }
 
   // Obtener progreso total del curso
@@ -123,11 +154,45 @@ class CoursesManager {
   getSheetTextContent() {
     if (!this.currentSheet) return "";
     
+    if (this.currentSheet.type === 'test') {
+      return this.currentSheet.exercises
+        .map(ex => `Pregunta: ${ex.question}`)
+        .join('\n');
+    }
+    
     return this.currentSheet.content.sections
+      .filter(section => section.type === 'text')
       .map(section => section.content)
       .join('\n\n');
+  }
+
+  // Limpiar progreso (útil para testing)
+  resetProgress(courseId) {
+    if (courseId) {
+      delete this.progress[courseId];
+    } else {
+      this.progress = {};
+    }
+    this.saveProgress();
+    console.log('🔄 Progreso reiniciado');
+    
+    // Recargar la página para reflejar cambios
+    if (this.currentCourse) {
+      window.location.reload();
+    }
   }
 }
 
 // Instancia global
 const coursesManager = new CoursesManager();
+console.log('✅ CoursesManager inicializado');
+
+// FUNCIÓN GLOBAL PARA REINICIAR PROGRESO DESDE CONSOLA
+window.resetCourseProgress = function(courseId = 'fundamentos-ia') {
+  if (confirm('⚠️ ¿Estás seguro de reiniciar todo el progreso?')) {
+    coursesManager.resetProgress(courseId);
+    alert('✅ Progreso reiniciado. Recargando página...');
+  }
+};
+
+console.log('💡 Tip: Escribe resetCourseProgress() en la consola para reiniciar el progreso');
