@@ -5,16 +5,10 @@
   "main": "app/main.js",
   "scripts": {
     "start": "electron .",
-    "build:portable": "electron-builder --win portable --config",
-    "download:model": "node scripts/download-model.js"
+    "build": "electron-builder --win --x64",
+    "build:dir": "electron-builder --dir"
   },
-  "keywords": [
-    "ai",
-    "offline",
-    "education",
-    "llama",
-    "portable"
-  ],
+  "keywords": ["ai", "offline", "education", "llama", "portable"],
   "author": "Tu Nombre",
   "license": "MIT",
   "devDependencies": {
@@ -25,33 +19,30 @@
     "appId": "com.llamasabia.app",
     "productName": "LlamaSabIA",
     "directories": {
-      "output": "dist"
+      "output": "dist",
+      "buildResources": "assets"
     },
+    "files": [
+      "app/**/*",
+      "assets/**/*"
+    ],
     "win": {
-      "target": "portable",
+      "target": "dir",
       "icon": "assets/icon.ico"
     },
     "extraResources": [
       {
         "from": "engine/",
         "to": "engine/",
-        "filter": [
-          "**/*"
-        ]
+        "filter": ["**/*"]
       },
       {
         "from": "models/",
         "to": "models/",
-        "filter": [
-          "**/*.gguf"
-        ]
+        "filter": ["**/*.gguf", "**/*.model"]
       }
     ],
-    "portable": {
-      "artifactName": "${productName}-${version}-portable.exe"
-    }
-  },
-  "dependencies": {
-    "marked": "^16.4.1"
+    "compression": "maximum",
+    "asar": true
   }
 }

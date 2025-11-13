@@ -63,7 +63,7 @@
         },
         {
           "id": 2,
-          "title": "Test: Bienvenido al Curso",
+          "title": "Test: Introducción al Curso",
           "duration": "10 min",
           "type": "test",
           "requiresCompletion": 1,
@@ -73,13 +73,13 @@
               "question": "¿Cuál es el objetivo principal de este Sprint?",
               "type": "multiple_choice",
               "options": [
-                "Aprender a programar",
+                "Aprender a programar en Python",
                 "Entender las funciones de activación",
                 "Crear una IA desde cero",
-                "Dominar todas las matemáticas"
+                "Dominar todas las matemáticas avanzadas"
               ],
               "correct": 1,
-              "explanation": "El objetivo es entender las funciones de activación para adentrarnos en la IA."
+              "explanation": "El objetivo principal es entender las funciones de activación para adentrarnos en la IA y dejar de verla como una 'caja negra'."
             },
             {
               "id": 2,
@@ -96,264 +96,265 @@
             },
             {
               "id": 3,
-              "question": "¿Para qué sirve LLaMaSabIA en este curso?",
+              "question": "¿Qué herramienta te ayudará a resolver dudas durante el curso?",
               "type": "multiple_choice",
               "options": [
-                "Para resolver todos los ejercicios por ti",
-                "Para responder dudas sobre el capítulo actual",
-                "Para hacer el proyecto final",
-                "Para calificar tus respuestas"
+                "Google",
+                "ChatGPT",
+                "LLaMaSabIA",
+                "Wikipedia"
               ],
-              "correct": 1,
-              "explanation": "LLaMaSabIA está para resolver tus dudas y explicar conceptos, pero NO para hacer los ejercicios por ti."
+              "correct": 2,
+              "explanation": "LLaMaSabIA es tu asistente de estudio que te ayudará a resolver dudas y explicar conceptos de diferentes maneras."
             },
             {
               "id": 4,
-              "question": "¿Qué técnica de estudio se recomienda en el curso?",
-              "type": "text",
-              "answer": "pomodoro",
-              "explanation": "El método Pomodoro (25 min estudio, 5 min descanso) ayuda a mantener la concentración."
+              "question": "Según la metodología del curso, ¿qué técnica de estudio se recomienda?",
+              "type": "multiple_choice",
+              "options": [
+                "Estudiar 8 horas seguidas",
+                "Método Pomodoro (25 min estudio, 5 min descanso)",
+                "Estudiar solo los fines de semana",
+                "Leer todo de una vez sin pausas"
+              ],
+              "correct": 1,
+              "explanation": "El método Pomodoro te ayuda a mantener la concentración alternando 25 minutos de estudio con 5 minutos de descanso."
+            },
+            {
+              "id": 5,
+              "question": "¿Qué NO hará LLaMaSabIA por ti?",
+              "type": "multiple_choice",
+              "options": [
+                "Explicar conceptos de diferentes maneras",
+                "Resolver dudas sobre el capítulo actual",
+                "Resolver los ejercicios directamente",
+                "Ayudarte cuando tengas dudas"
+              ],
+              "correct": 2,
+              "explanation": "LLaMaSabIA NO resolverá los ejercicios por ti. Es importante que los hagas tú mismo para realmente aprender."
             }
           ],
           "unlocked": false
         },
         {
           "id": 3,
-          "title": "Capítulo 1: Plano Cartesiano",
-          "duration": "25 min",
+          "title": "Capítulo 1: Matrices",
+          "duration": "45 min",
           "type": "content",
+          "requiresCompletion": 2,
           "content": {
             "sections": [
               {
+                "type": "image",
+                "src": "./assets/capitulo1/imagen9.png",
+                "alt": "Perceptron",
+                "caption": "El perceptrón como base de la IA"
+              },
+              {
                 "type": "text",
-                "content": "# Ubicación de Puntos en el Plano Cartesiano\n\n**Antes de comenzar**, recuerda tener siempre tu papel y lápiz a la mano. Recomendamos un cuaderno para los ejercicios."
+                "content": "# Capítulo: Matrices\n\n## 1. Introducción\n\nEste mini-módulo de Fundamentos de Matemática para IA está diseñado para que, al menos, puedas comprender de qué se habla realmente cuando se menciona la Inteligencia Artificial y dejes de verla como una simple caja negra. Más que memorizar conceptos, el objetivo es que logres entender cómo funciona.\n\nAdemás, buscamos que comprendas cómo las computadoras han llegado a entender el lenguaje humano, tal como lo hacen modelos como **LLaMaSabia** (la IA con la que puedes conversar mientras avanzas en este capítulo para ayudarte a comprender mejor). Hoy incluso existen sistemas como ChatGPT, Claude o Gemini, capaces de interpretar texto e imágenes simultáneamente, algo que hace apenas unos años parecía impensable.\n\nPero, como toda historia, la inteligencia artificial también tiene un comienzo. Y ese inicio se remonta a alguien muy especial: **El perceptrón.**"
+              },
+              {
+                "type": "text",
+                "content": "El perceptrón, creado en 1958 por Frank Rosenblatt, se inspiró en cómo las neuronas del cerebro procesan información. Rosenblatt buscó construir una \"neurona artificial\" capaz de aprender a reconocer patrones, del mismo modo en que lo hace el cerebro humano.\n\nAunque era un modelo sencillo, fue el punto de partida de todo el aprendizaje automático y sentó las bases de las redes neuronales profundas que hoy hacen posible la existencia de sistemas como ChatGPT y otras IA modernas."
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/imagen2.png",
+                "alt": "Estructura del Perceptrón",
+                "caption": "Componentes básicos del perceptrón"
+              },
+              {
+                "type": "text",
+                "content": "Los círculos verdes representan las entradas, que no son más que números. Cada una de ellas se multiplica por un valor llamado peso, y a ese resultado se le suma algo llamado sesgo (representado por el círculo azul).\n\nEl resultado de todo eso pasa por una función de activación, que decide si la neurona \"se activa\" o no (Hablaremos de ellas en próximos capítulos, además que las usarás en el proyecto Final). Finalmente, obtenemos una salida, es decir, otro número.\n\nPero no te preocupes, el objetivo de hoy no es entender todo eso a la vez, sino enfocarnos en ese famoso producto entre pesos y entradas, que se representa así:\n\n**w^T x = w₁x₁ + w₂x₂ + w₃x₃**\n\nEste es un producto matricial, así que... ¿por qué no mejor empezamos hablando de matrices?"
+              },
+              {
+                "type": "text",
+                "content": "## 2. Matrices\n\n### Definición general\n\nUna **matriz** es una disposición rectangular de números, símbolos o expresiones organizadas en **filas** y **columnas**. Se denota con una letra mayúscula, por ejemplo A, y sus elementos individuales con letras minúsculas acompañadas de dos subíndices: A = [aᵢⱼ]\n\nDonde:\n- i indica la **fila**\n- j indica la **columna**\n- aᵢⱼ representa el elemento que se encuentra en la posición (i, j)"
               },
               {
                 "type": "info",
-                "content": "💡 **Recuerda**: Si te parece muy difícil, tienes a **LLaMaSabIA** para asistirte. Si te parece muy fácil, tranquilo, que a medida que avancemos las cosas se irán poniendo más complicadas."
+                "content": "💡 **Ejemplo**: Una matriz de 2×3 (dos filas y tres columnas):\n```\nA = [2  3  1]\n    [5  4  0]\n```\nEl elemento a₂₁ = 5 corresponde a la segunda fila y primera columna."
               },
               {
                 "type": "image",
-                "src": "./assets/capitulo1/llamasabia.png",
-                "alt": "Plano cartesiano con ejes X e Y",
-                "caption": " "
+                "src": "./assets/capitulo1/imagen3.png",
+                "alt": "Representación visual de matrices",
+                "caption": "Estructura y notación de matrices"
               },
               {
                 "type": "text",
-                "content": "## ¿Qué es el Plano Cartesiano?\n\nBásicamente, el plano cartesiano está formado por **dos rectas numéricas reales** que se cruzan formando un ángulo recto.\n\nEste sistema fue creado en **1637** por el filósofo y matemático francés **René Descartes**, quien propuso una manera de unir la geometría con el álgebra. Gracias a su idea, podemos:\n\n- Ubicar puntos en el espacio\n- Representar ecuaciones visualmente\n- Estudiar relaciones entre variables de manera gráfica"
-              },
-              {
-                "type": "image",
-                "src": "./assets/capitulo1/planocartesiano.png",
-                "alt": "Plano cartesiano con ejes X e Y",
-                "caption": "El plano cartesiano y sus componentes principales"
+                "content": "Las matrices son herramientas fundamentales en casi todas las ramas de la ciencia y la ingeniería:\n- En **física**, describen sistemas de ecuaciones lineales y transformaciones de coordenadas\n- En **economía**, representan modelos de insumo-producto y relaciones entre variables\n- En **estadística** y **aprendizaje automático**, permiten representar **datos**, **pesos de redes neuronales**, **transformaciones lineales** y **cálculos de gradientes**\n\nFormalmente, una matriz puede verse como una **función** que asigna cada par de índices a un número real."
               },
               {
                 "type": "text",
-                "content": "\nEste sistema fue creado en **1637** por el filósofo y matemático francés **René Descartes**, quien propuso una manera de unir la geometría con el álgebra. Gracias a su idea, podemos:\n\n- Ubicar puntos en el espacio\n- Representar ecuaciones visualmente\n- Estudiar relaciones entre variables de manera gráfica"
-              },
-              {
-                "type": "image",
-                "src": "./assets/capitulo1/descartes.png",
-                "alt": "Plano cartesiano con ejes X e Y",
-                "caption": "El plano cartesiano y sus componentes principales"
+                "content": "### Definición mediante regla de formación\n\nUna matriz también puede definirse mediante una **regla** que determina el valor de cada elemento a partir de sus índices.\n\nPor ejemplo, si se define B = [bᵢⱼ] tal que bᵢⱼ = i + j, entonces:\n```\nB = [2  3  4]\n    [3  4  5]\n```\n\nEste método de definición es útil cuando se trabaja con patrones regulares o al generar matrices mediante programación."
               },
               {
                 "type": "text",
-                "content": "## Componentes del Plano Cartesiano\n\n**Eje X (eje de abscisas)**: La recta horizontal\n\n**Eje Y (eje de ordenadas)**: La recta vertical\n\n**Origen**: El punto donde ambos ejes se cruzan, representado como **(0, 0)**\n\n**Cuadrantes**: Los ejes dividen el plano en cuatro regiones que nos ayudan a identificar dónde se encuentra un punto."
+                "content": "### Dimensiones\n\nSi una matriz tiene m filas y n columnas, se dice que es de **dimensión m × n**.\n\nPor ejemplo, una matriz cuadrada de orden 3 (3 × 3) tiene igual número de filas y columnas, lo que permite definir propiedades adicionales como el **determinante**, la **traza** o la **matriz inversa**."
+              },
+              {
+                "type": "text",
+                "content": "### Operaciones básicas con matrices\n\n#### 1. Suma de matrices\n\nLa suma de dos matrices A y B del mismo tamaño se define elemento a elemento:\n(A + B)ᵢⱼ = aᵢⱼ + bᵢⱼ\n\n**Ejemplo:**\n```\nA = [1  2]    B = [5  6]    A+B = [6   8]\n    [3  4]        [7  8]          [10  12]\n```"
               },
               {
                 "type": "warning",
-                "content": "📐 **Notación Matematica**: De forma más formal, el plano cartesiano se identifica como el producto cartesiano de ℝ consigo mismo: **ℝ × ℝ = ℝ²**\n\nEsto significa que está formado por todos los pares posibles **(x, y)**, donde tanto **x** como **y** son números reales."
+                "content": "⚠️ **Importante**: Solo se pueden sumar matrices que tengan **exactamente las mismas dimensiones**."
               },
               {
                 "type": "text",
-                "content": "## Cómo Ubicar Puntos en el Plano\n\nPara ubicar un punto **(a, b)** en el plano cartesiano, seguimos estos pasos:\n## Paso 1: Localizar la coordenada X (primera coordenada)\n- Si **a > 0** → nos movemos a la **derecha** del origen\n- Si **a < 0** → nos movemos a la **izquierda** del origen\n- Si **a = 0** → permanecemos sobre el eje Y\nDesde allí, trazamos una **línea vertical** (paralela al eje Y)\n## Paso 2: Localizar la coordenada Y (segunda coordenada)\n- Si **b > 0** → subimos desde el origen\n- Si **b < 0** → bajamos desde el origen\n- Si **b = 0** → permanecemos sobre el eje X\n\nDesde allí, trazamos una **línea horizontal** (paralela al eje X)\n## Paso 3: Encontrar la intersección\nEl punto donde ambas líneas se cruzan es nuestro punto **(a, b)**"
+                "content": "**Suma escalar:**\nSi A = [aᵢⱼ] y c ∈ ℝ, entonces: A + c = [aᵢⱼ + c]\n\n**Ejemplo:**\n```\nA = [1  3]    c = 2    A+c = [3  5]\n    [4  2]                    [6  4]\n```"
               },
               {
-                "type": "image",
-                "src": "./assets/capitulo1/ubicacion.png",
-                "alt": " punto estará a la derecha y arriba del origen, en el primer cuadrante",
-                "caption": " "
+                "type": "text",
+                "content": "#### 2. Multiplicación por un escalar\n\nSi k ∈ ℝ, la multiplicación escalar de una matriz se define como:\n(kA)ᵢⱼ = k · aᵢⱼ\n\n**Ejemplo:**\n```\n2 × [1  -3] = [2  -6]\n    [4   0]   [8   0]\n```"
+              },
+              {
+                "type": "text",
+                "content": "### Multiplicación de matrices\n\nLa multiplicación de matrices **no se realiza elemento a elemento**.\n\nSi A es de dimensión m × n y B de dimensión n × p, entonces el producto C = AB es una matriz m × p tal que:\n\ncᵢⱼ = Σ(k=1 hasta n) aᵢₖ · bₖⱼ\n\n**Ejemplo:**\n```\nA = [1  2  3]    B = [1  4]    AB = [14  32]\n    [4  5  6]        [2  5]         [32  77]\n                     [3  6]\n```"
               },
               {
                 "type": "info",
-                "content": "🎯 **Distancias importantes**:\n- El valor absoluto de **a** (|a|) indica qué tan lejos está el punto del **eje Y**\n- El valor absoluto de **b** (|b|) indica qué tan lejos está el punto del **eje X**"
+                "content": "🔍 **Propiedades importantes:**\n\n1. A(BC) = (AB)C (asociatividad)\n2. A(B + C) = AB + AC (distributividad)\n3. AB ≠ BA en general (no conmutativa)\n4. (kA)B = k(AB) = A(kB)"
               },
               {
                 "type": "text",
-                "content": "## Ejemplo Práctico\n\nVamos a ubicar el punto **P = (−2, 1)** en el plano cartesiano.\n\n"
-              },
-              {
-                "type": "image",
-                "src": "./assets/capitulo1/ejemplo.png",
-                "alt": "Ubicación del punto P(-2, 1) en el plano cartesiano",
-                "caption": "Proceso de ubicación del punto P(-2, 1)"
-              },
-              {
-                "type": "text",
-                "content": "## Análisis del punto:\n- Primera coordenada: **a = −2** (negativo)\n- Segunda coordenada: **b = 1** (positivo)\n## Proceso paso a paso:\n\n**1.** Ubicamos **−2** en el eje X (dos unidades a la izquierda del origen)\n\n**2.** Desde −2, trazamos una **línea vertical** paralela al eje Y\n\n**3.** Ubicamos **1** en el eje Y (una unidad arriba del origen)\n\n**4.** Desde 1, trazamos una **línea horizontal** paralela al eje X\n\n**5.** El punto de intersección de ambas líneas es **P(−2, 1)**"
+                "content": "### Transpuesta de una matriz\n\nLa **transpuesta** de una matriz A, denotada A^T, se obtiene **intercambiando filas por columnas**:\n\n(A^T)ᵢⱼ = aⱼᵢ\n\n**Ejemplo:**\n```\nA = [1  2  3]    A^T = [1  4]\n    [4  5  6]          [2  5]\n                       [3  6]\n```"
               },
               {
                 "type": "success",
-                "content": "✅ **Resultado**: Como **a = −2** (negativo) y **b = 1** (positivo), el punto se ubica en el **segundo cuadrante**, es decir, a la izquierda del eje Y y por encima del eje X."
+                "content": "✅ **Propiedades de la transpuesta:**\n\n1. (A^T)^T = A\n2. (A + B)^T = A^T + B^T\n3. (kA)^T = kA^T\n4. (AB)^T = B^T A^T"
               },
               {
                 "type": "text",
-                "content": "## Ejercicios para Practicar\n\n**Ahora es tu turno**. Toma tu papel y lápiz, dibuja un plano cartesiano y ubica los siguientes puntos:\n\n1. **A = (3, 2)**\n2. **B = (−1, −3)**\n3. **C = (0, 4)**\n4. **D = (2, −1)**\n5. **E = (−3, 0)**\n\nPara cada punto, identifica:\n- ¿En qué cuadrante se encuentra? (o si está sobre algún eje)\n- ¿Qué tan lejos está del eje X?\n- ¿Qué tan lejos está del eje Y?"
+                "content": "### Ejercicio 1\n\nSea:\n```\nA = [1  2]    B = [0  1]\n    [3  4]        [2  3]\n```\n\nCalcular:\n1. 2A + 3B\n2. (A + B)^T"
+              },
+              {
+                "type": "text",
+                "content": "**Solución:**\n\n1. 2A + 3B:\n```\n2A = [2  4]    3B = [0  3]    2A+3B = [2   7]\n     [6  8]         [6  9]            [12  17]\n```\n\n2. (A + B)^T:\n```\nA+B = [1  3]    (A+B)^T = [1  5]\n      [5  7]              [3  7]\n```"
+              },
+              {
+                "type": "text",
+                "content": "### Ejercicio 2\n\nSea A una matriz 2 × 3 y B una matriz 3 × 2:\n```\nA = [1   0  2]    B = [3  1]\n    [-1  3  1]        [2  1]\n                      [1  0]\n```\n\nCalcular AB y BA."
+              },
+              {
+                "type": "text",
+                "content": "**Solución:**\n\n```\nAB = [5  1]\n     [5  2]\n\nBA = [2  3  7]\n     [1  3  5]\n     [1  0  2]\n```\n\nComo se observa, AB ≠ BA, lo que demuestra que la multiplicación de matrices **no es conmutativa**."
               },
               {
                 "type": "warning",
-                "content": "⏰ **Tómate tu tiempo**: No hay prisa. Es importante que practiques dibujando cada punto cuidadosamente.\n\nRecuerda: **LLaMaSabIA** puede ayudarte si tienes dudas sobre el proceso, pero es importante que hagas los ejercicios tú mismo."
+                "content": "📐 **Observación importante**: La traza de una matriz es la suma de los elementos de su diagonal principal y solo se define para matrices cuadradas.\n\nUna matriz **simétrica** cumple A = A^T (sus elementos a través de la diagonal son iguales: aᵢⱼ = aⱼᵢ).\n\nUna matriz **antisimétrica** cumple A = -A^T."
               },
               {
                 "type": "text",
-                "content": "## Reflexión Final\n\nAntes de continuar a la siguiente hoja, asegúrate de que puedes:\n\n✓ Identificar los componentes del plano cartesiano\n✓ Ubicar puntos dados sus coordenadas (x, y)\n✓ Determinar en qué cuadrante se encuentra un punto\n✓ Entender el significado de cada coordenada\n\n**¿Listo?** En la siguiente hoja pondremos a prueba lo aprendido."
+                "content": "## Volvamos al perceptrón\n\nComo verás, hay mucho que decir sobre las matrices, y podríamos profundizar muchísimo más. Sin embargo, dado que este curso es solo una demo, por ahora no entraremos en todos los detalles.\n\nLo importante es que **ya tienes las bases necesarias** para entender lo que vimos al principio: **el famoso perceptrón**, o al menos su **primera parte**, que es clave para comprender cómo funcionan los grandes avances actuales en **Inteligencia Artificial**."
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/imagen4.jpg",
+                "alt": "Perceptrón con notación matricial",
+                "caption": "Del perceptrón a la notación matricial"
+              },
+              {
+                "type": "text",
+                "content": "Este gráfico muestra la **parte esencial del perceptrón**: las **entradas** x₁, x₂, x₃, ..., xₙ, que no son más que **números**. Se multiplican por su **peso** correspondiente w₁, w₂, w₃, ..., wₙ.\n\nEl círculo azul representa el resultado de **todas esas multiplicaciones**, sumadas con un **sesgo** (bias) b:\n\n**x₁w₁ + x₂w₂ + x₃w₃ + ... + xₙwₙ + b**\n\nPara no escribir toda esa expresión cada vez, usamos **notación matricial**, que nos permite representar todo el cálculo de forma más compacta y ordenada."
+              },
+              {
+                "type": "text",
+                "content": "Primero, definimos los **vectores** de pesos y entradas (matrices de dimensión n×1):\n\n```\nw = [w₁]    x = [x₁]\n    [w₂]        [x₂]\n    [⋮]         [⋮]\n    [wₙ]        [xₙ]\n```\n\nPero hay un pequeño detalle: ambos son vectores columna, así que **no podemos multiplicarlos directamente**.\n\nPara hacerlo correctamente, **transponemos el vector de pesos**, convirtiéndolo en un **vector fila**:\n\n```\nw^T = [w₁  w₂  ...  wₙ]\n```"
+              },
+              {
+                "type": "success",
+                "content": "🎯 **Ahora sí podemos realizar la multiplicación:**\n\nw^T x = [w₁  w₂  ...  wₙ] × [x₁]  = w₁x₁ + w₂x₂ + ... + wₙxₙ\n                              [x₂]\n                              [⋮]\n                              [xₙ]\n\nY al agregar el sesgo b, obtenemos la **expresión general del perceptrón**:\n\n**z = w^T x + b**"
+              },
+              {
+                "type": "text",
+                "content": "Este valor z luego pasa por una **función de activación** (Que veremos más adelante, y sobre todo lo verás en acción en el proyecto).\n\nA todo este proceso se le conoce como una **combinación lineal**, y es la base matemática sobre la que se construyen todas las **redes neuronales modernas**."
+              },
+              {
+                "type": "info",
+                "content": "💡 **Reflexión**: Ahora que entiendes las matrices y su aplicación en el perceptrón, estás un paso más cerca de comprender cómo funcionan realmente los modelos de IA modernos. ¡Sigamos adelante!"
               }
             ]
           },
           "unlocked": false
         },
         {
-        "id": 4,
-        "title": "Test: Capítulo 1 - Plano Cartesiano",
-        "duration": "10 min",
-        "type": "test",
-        "requiresCompletion": 3,
-        "exercises": [
-          {
-            "id": 1,
-            "question": "¿En qué año fue creado el plano cartesiano y por quién?",
-            "type": "multiple_choice",
-            "options": [
-              "1637 por René Descartes",
-              "1687 por Isaac Newton",
-              "1737 por Leonhard Euler",
-              "1537 por Galileo Galilei"
-            ],
-            "correct": 0,
-            "explanation": "El plano cartesiano fue creado en 1637 por el filósofo y matemático francés René Descartes."
-          },
-          {
-            "id": 2,
-            "question": "¿Cuál es el nombre del eje horizontal del plano cartesiano?",
-            "type": "multiple_choice",
-            "options": [
-              "Eje de ordenadas",
-              "Eje de abscisas",
-              "Eje Y",
-              "Eje principal"
-            ],
-            "correct": 1,
-            "explanation": "El eje horizontal se llama eje X o eje de abscisas."
-          },
-          {
-            "id": 3,
-            "question": "¿Qué representa el punto (0, 0) en el plano cartesiano?",
-            "type": "multiple_choice",
-            "options": [
-              "El primer cuadrante",
-              "El centro del plano",
-              "El origen",
-              "El punto final"
-            ],
-            "correct": 2,
-            "explanation": "El punto (0, 0) se llama origen y es donde se cruzan los ejes X e Y."
-          },
-          {
-            "id": 4,
-            "question": "Si un punto tiene coordenadas P = (3, -2), ¿en qué cuadrante se encuentra?",
-            "type": "multiple_choice",
-            "options": [
-              "Primer cuadrante",
-              "Segundo cuadrante",
-              "Tercer cuadrante",
-              "Cuarto cuadrante"
-            ],
-            "correct": 3,
-            "explanation": "Como x = 3 (positivo) y y = -2 (negativo), el punto se encuentra en el cuarto cuadrante (derecha y abajo del origen)."
-          },
-          {
-            "id": 5,
-            "question": "¿En qué cuadrante se ubica un punto con coordenadas negativas en ambos ejes?",
-            "type": "multiple_choice",
-            "options": [
-              "Primer cuadrante",
-              "Segundo cuadrante",
-              "Tercer cuadrante",
-              "Cuarto cuadrante"
-            ],
-            "correct": 2,
-            "explanation": "El tercer cuadrante contiene puntos donde tanto x como y son negativos (izquierda y abajo del origen)."
-          },
-          {
-            "id": 6,
-            "question": "Si un punto está ubicado en (-4, 0), ¿dónde se encuentra?",
-            "type": "multiple_choice",
-            "options": [
-              "En el eje X",
-              "En el eje Y",
-              "En el primer cuadrante",
-              "En el tercer cuadrante"
-            ],
-            "correct": 0,
-            "explanation": "Cuando la coordenada y = 0, el punto está sobre el eje X. En este caso, 4 unidades a la izquierda del origen."
-          },
-          {
-            "id": 7,
-            "question": "Para ubicar el punto (2, 3), ¿qué movimiento hacemos primero desde el origen?",
-            "type": "multiple_choice",
-            "options": [
-              "3 unidades arriba",
-              "2 unidades a la derecha",
-              "2 unidades arriba",
-              "3 unidades a la derecha"
-            ],
-            "correct": 1,
-            "explanation": "Siempre ubicamos primero la coordenada x (horizontal). En este caso, nos movemos 2 unidades a la derecha del origen."
-          },
-          {
-            "id": 8,
-            "question": "¿Qué indica el valor absoluto de la coordenada x de un punto?",
-            "type": "multiple_choice",
-            "options": [
-              "Qué tan lejos está del eje X",
-              "Qué tan lejos está del eje Y",
-              "En qué cuadrante está",
-              "La distancia al origen"
-            ],
-            "correct": 1,
-            "explanation": "El valor absoluto de x (|x|) indica la distancia horizontal del punto al eje Y."
-          },
-          {
-            "id": 9,
-            "question": "¿Cuál es la notación formal del plano cartesiano?",
-            "type": "multiple_choice",
-            "options": [
-              "ℝ",
-              "ℝ × ℝ = ℝ²",
-              "ℝ³",
-              "X × Y"
-            ],
-            "correct": 1,
-            "explanation": "El plano cartesiano se identifica formalmente como ℝ × ℝ = ℝ², el producto cartesiano de ℝ consigo mismo."
-          },
-          {
-            "id": 10,
-            "question": "Si el punto Q = (-3, 5), ¿cuál afirmación es correcta?",
-            "type": "multiple_choice",
-            "options": [
-              "Está 3 unidades a la derecha y 5 arriba",
-              "Está 3 unidades a la izquierda y 5 arriba",
-              "Está 3 unidades arriba y 5 a la izquierda",
-              "Está en el primer cuadrante"
-            ],
-            "correct": 1,
-            "explanation": "x = -3 significa 3 unidades a la izquierda del origen, y = 5 significa 5 unidades arriba. El punto está en el segundo cuadrante."
-          }
-        ],
-        "unlocked": false
-      }
+          "id": 4,
+          "title": "Test: Capítulo 1 - Matrices",
+          "duration": "15 min",
+          "type": "test",
+          "requiresCompletion": 3,
+          "exercises": [
+            {
+              "id": 1,
+              "question": "Sea la matriz A = [[1,2,3], [4,5,6]] y la matriz B = [[2,1], [1,0], [3,2]]. ¿Cuál es el resultado de AB?",
+              "type": "multiple_choice",
+              "options": [
+                "[[13,8], [31,20]]",
+                "[[14,9], [32,21]]",
+                "[[12,7], [30,19]]",
+                "No es posible realizar la multiplicación"
+              ],
+              "correct": 0,
+              "explanation": "Para multiplicar matrices, el número de columnas de A (3) debe coincidir con el número de filas de B (3). El resultado es una matriz 2×2. Calculando: (1×2+2×1+3×3, 1×1+2×0+3×2) = (13,8) para la primera fila, y (4×2+5×1+6×3, 4×1+5×0+6×2) = (31,20) para la segunda fila."
+            },
+            {
+              "id": 2,
+              "question": "En un perceptrón con 3 entradas, si w = [0.5, -1, 2] y x = [1, 0.5, -1], ¿cuál es el valor de w^Tx + b cuando b = 1?",
+              "type": "multiple_choice",
+              "options": [
+                "-0.5",
+                "-1.5",
+                "0",
+                "-2"
+              ],
+              "correct": 1,
+              "explanation": "Calculamos el producto punto: w^Tx = (0.5×1) + (-1×0.5) + (2×-1) = 0.5 - 0.5 - 2 = -2. Luego sumamos el sesgo: -2 + 1 = -1.5"
+            },
+            {
+              "id": 3,
+              "question": "¿Cuál de las siguientes matrices es simétrica?",
+              "type": "multiple_choice",
+              "options": [
+                "[[1,2,3], [2,4,5], [3,5,6]]",
+                "[[1,2,3], [2,4,6], [3,5,7]]",
+                "[[1,2,0], [2,1,2], [0,2,1]]",
+                "[[1,2,3], [4,5,6], [7,8,9]]"
+              ],
+              "correct": 0,
+              "explanation": "Una matriz es simétrica si A = A^T, es decir, si aᵢⱼ = aⱼᵢ para todos los elementos. En la opción (a), verificamos: a₁₂=2=a₂₁, a₁₃=3=a₃₁, a₂₃=5=a₃₂. Por lo tanto, es simétrica."
+            },
+            {
+              "id": 4,
+              "question": "Sean las matrices A = [[1,2,-1], [0,3,2]], B = [[3,0,1], [1,2,-1], [4,1,2]] y C = [[2,1], [0,3], [1,-1]]. Si calculamos ABC y luego lo transponemos, ¿cuál es el resultado de (ABC)^T?",
+              "type": "multiple_choice",
+              "options": [
+                "[[8,13], [15,17]]",
+                "[[13,17], [8,15]]",
+                "[[8,15], [13,17]]",
+                "No se puede realizar la operación"
+              ],
+              "correct": 2,
+              "explanation": "Primero calculamos AB (2×3 × 3×3 = 2×3), luego (AB)C (2×3 × 3×2 = 2×2), y finalmente transponemos el resultado. También podemos verificar que (ABC)^T = C^T B^T A^T. El resultado es [[8,15], [13,17]]."
+            },
+            {
+              "id": 5,
+              "question": "Sea la matriz triangular superior P = [[2,1,3], [0,4,-1], [0,0,5]]. Si se multiplica por sí misma (P²), ¿cuál será el elemento en la posición (1,3)?",
+              "type": "multiple_choice",
+              "options": [
+                "17",
+                "19",
+                "21",
+                "23"
+              ],
+              "correct": 1,
+              "explanation": "Para calcular P², multiplicamos P×P. El elemento en posición (1,3) se calcula como: (fila 1 de P) × (columna 3 de P) = 2×3 + 1×(-1) + 3×5 = 6 - 1 + 15 = 19."
+            }
+          ],
+          "unlocked": false
+        }
       ]
     }
   ],
