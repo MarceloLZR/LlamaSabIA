@@ -1,0 +1,11 @@
+{
+  "id": "algebra-lineal-ia",
+  "title": "Álgebra Lineal para IA",
+  "description": "Entiende el álgebra lineal aplicado a IA desde cero",
+  "duration": "3 semanas",
+  "difficulty": "Principiante",
+  "icon": "🔢",
+  "locked": true,
+  "chapters": [],
+  "aiContext": "Este es un curso de álgebra lineal enfocado en aplicaciones para inteligencia artificial. El estudiante está aprendiendo desde cero. Responde dudas de forma pedagógica, con ejemplos simples. NO resuelvas los ejercicios directamente, guía al estudiante para que llegue a la respuesta por sí mismo."
+}

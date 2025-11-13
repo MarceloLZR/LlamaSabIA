@@ -1,0 +1,405 @@
+{
+  "id": "fundamentos-ia",
+  "title": "Fundamentos de Matemática para IA",
+  "description": "Sprint enfocado en entender las funciones de activación desde cero",
+  "duration": "3 semanas",
+  "difficulty": "Principiante",
+  "icon": "🧮",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introducción al Sprint",
+      "sheets": [
+        {
+          "id": 1,
+          "title": "Bienvenido al Curso",
+          "duration": "15 min",
+          "type": "content",
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "# ¡Bienvenido al Sprint!\n\n¡Te damos la bienvenida a nuestro primer módulo! Primero, **agradecerte** porque ya eres parte de este proyecto y además tienes esas ganas de aprender.\n\nEste Sprint llamado **\"Minicurso Fundamentos de Matemática para IA\"** tiene por objetivo que logres entender algo llamado **\"Funciones de activación\"**, ya que buscamos adentrarnos en este mundo de la Inteligencia Artificial.\n\nEs primordial entenderla desde adentro y dejar de verla como una **\"caja negra\"**."
+              },
+              {
+                "type": "warning",
+                "content": "⏰ **Ten paciencia**: Las matemáticas pueden tomar tiempo en entenderse. ¡No te desanimes!"
+              },
+              {
+                "type": "image",
+                "src": "./assets/bienvenida/intro1.png",
+                "alt": "Diagrama de bienvenida",
+                "caption": "Estructura del curso"
+              },
+              {
+                "type": "text",
+                "content": "## 🎯 Cómo Funciona la Plataforma\n## Estructura del Sprint\n\n1. **Sprint** → Complétalo en mínimo 3 semanas\n2. **Capítulos** → Divididos en temas específicos\n3. **Hojas de Estudio** → Cada una te enseña algo nuevo (15-30 min)"
+              },
+              {
+                "type": "image",
+                "src": "./assets/bienvenida/intro2.png",
+                "alt": "LLaMaSabIA asistente de estudio",
+                "caption": "LLaMaSabIA como asistente de estudio"
+              },
+              {
+                "type": "text",
+                "content": "## Metodología de Aprendizaje\n\n📄 **En cada hoja:**\n- Aprenderás un concepto nuevo\n- Harás ejercicios con papel y lápiz\n- Responderás preguntas para desbloquear la siguiente\n\n🤖 **LLaMaSabIA te ayudará:**\n- Resuelve dudas sobre el capítulo actual\n- Explica conceptos de diferentes maneras\n- **NO te resolverá los ejercicios** (aprenderás haciéndolos tú)\n\n⏱️ **Método Pomodoro (Recomendado):**\n- 25 minutos de estudio\n- 5 minutos de descanso\n- Repite el ciclo"
+              },
+              {
+                "type": "info",
+                "content": "💡 **Tip**: Si una hoja te toma más de 30 minutos, es completamente normal. Tómate el tiempo que necesites."
+              },
+              {
+                "type": "text",
+                "content": "## 🏆 Evaluación y Proyecto Final\n## Durante el Sprint:\n- Completa todas las hojas de estudio\n- Realiza los ejercicios propuestos\n- Responde las preguntas de control\n- Habrá un **repaso total** al final de cada capítulo\n\n## Proyecto Final:\n- Aplicarás todo lo aprendido\n- Recibirás instrucciones detalladas\n- Compartirás tu proyecto vía QR\n- Verás proyectos de otros estudiantes\n- Recibirás retroalimentación de la comunidad"
+              },
+              {
+                "type": "success",
+                "content": "🚀 **¡Estás listo!** Esperamos que te diviertas en este camino de aprendizaje. ¡Mucha suerte y a darle al coco!"
+              }
+            ]
+          },
+          "unlocked": true
+        },
+        {
+          "id": 2,
+          "title": "Test: Bienvenido al Curso",
+          "duration": "10 min",
+          "type": "test",
+          "requiresCompletion": 1,
+          "exercises": [
+            {
+              "id": 1,
+              "question": "¿Cuál es el objetivo principal de este Sprint?",
+              "type": "multiple_choice",
+              "options": [
+                "Aprender a programar",
+                "Entender las funciones de activación",
+                "Crear una IA desde cero",
+                "Dominar todas las matemáticas"
+              ],
+              "correct": 1,
+              "explanation": "El objetivo es entender las funciones de activación para adentrarnos en la IA."
+            },
+            {
+              "id": 2,
+              "question": "¿Cuánto tiempo aproximado te tomará cada hoja de estudio?",
+              "type": "multiple_choice",
+              "options": [
+                "5-10 minutos",
+                "15-30 minutos",
+                "1-2 horas",
+                "Todo el día"
+              ],
+              "correct": 1,
+              "explanation": "Cada hoja está diseñada para tomar entre 15 y 30 minutos, aunque puedes tomarte más tiempo si lo necesitas."
+            },
+            {
+              "id": 3,
+              "question": "¿Para qué sirve LLaMaSabIA en este curso?",
+              "type": "multiple_choice",
+              "options": [
+                "Para resolver todos los ejercicios por ti",
+                "Para responder dudas sobre el capítulo actual",
+                "Para hacer el proyecto final",
+                "Para calificar tus respuestas"
+              ],
+              "correct": 1,
+              "explanation": "LLaMaSabIA está para resolver tus dudas y explicar conceptos, pero NO para hacer los ejercicios por ti."
+            },
+            {
+              "id": 4,
+              "question": "¿Qué técnica de estudio se recomienda en el curso?",
+              "type": "text",
+              "answer": "pomodoro",
+              "explanation": "El método Pomodoro (25 min estudio, 5 min descanso) ayuda a mantener la concentración."
+            }
+          ],
+          "unlocked": false
+        },
+        {
+          "id": 3,
+          "title": "Capítulo 1: Plano Cartesiano",
+          "duration": "25 min",
+          "type": "content",
+          "content": {
+            "sections": [
+              {
+                "type": "text",
+                "content": "# Ubicación de Puntos en el Plano Cartesiano\n\n**Antes de comenzar**, recuerda tener siempre tu papel y lápiz a la mano. Recomendamos un cuaderno para los ejercicios."
+              },
+              {
+                "type": "info",
+                "content": "💡 **Recuerda**: Si te parece muy difícil, tienes a **LLaMaSabIA** para asistirte. Si te parece muy fácil, tranquilo, que a medida que avancemos las cosas se irán poniendo más complicadas."
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/llamasabia.png",
+                "alt": "Plano cartesiano con ejes X e Y",
+                "caption": " "
+              },
+              {
+                "type": "text",
+                "content": "## ¿Qué es el Plano Cartesiano?\n\nBásicamente, el plano cartesiano está formado por **dos rectas numéricas reales** que se cruzan formando un ángulo recto.\n\nEste sistema fue creado en **1637** por el filósofo y matemático francés **René Descartes**, quien propuso una manera de unir la geometría con el álgebra. Gracias a su idea, podemos:\n\n- Ubicar puntos en el espacio\n- Representar ecuaciones visualmente\n- Estudiar relaciones entre variables de manera gráfica"
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/planocartesiano.png",
+                "alt": "Plano cartesiano con ejes X e Y",
+                "caption": "El plano cartesiano y sus componentes principales"
+              },
+              {
+                "type": "text",
+                "content": "\nEste sistema fue creado en **1637** por el filósofo y matemático francés **René Descartes**, quien propuso una manera de unir la geometría con el álgebra. Gracias a su idea, podemos:\n\n- Ubicar puntos en el espacio\n- Representar ecuaciones visualmente\n- Estudiar relaciones entre variables de manera gráfica"
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/descartes.png",
+                "alt": "Plano cartesiano con ejes X e Y",
+                "caption": "El plano cartesiano y sus componentes principales"
+              },
+              {
+                "type": "text",
+                "content": "## Componentes del Plano Cartesiano\n\n**Eje X (eje de abscisas)**: La recta horizontal\n\n**Eje Y (eje de ordenadas)**: La recta vertical\n\n**Origen**: El punto donde ambos ejes se cruzan, representado como **(0, 0)**\n\n**Cuadrantes**: Los ejes dividen el plano en cuatro regiones que nos ayudan a identificar dónde se encuentra un punto."
+              },
+              {
+                "type": "warning",
+                "content": "📐 **Notación Matematica**: De forma más formal, el plano cartesiano se identifica como el producto cartesiano de ℝ consigo mismo: **ℝ × ℝ = ℝ²**\n\nEsto significa que está formado por todos los pares posibles **(x, y)**, donde tanto **x** como **y** son números reales."
+              },
+              {
+                "type": "text",
+                "content": "## Cómo Ubicar Puntos en el Plano\n\nPara ubicar un punto **(a, b)** en el plano cartesiano, seguimos estos pasos:\n## Paso 1: Localizar la coordenada X (primera coordenada)\n- Si **a > 0** → nos movemos a la **derecha** del origen\n- Si **a < 0** → nos movemos a la **izquierda** del origen\n- Si **a = 0** → permanecemos sobre el eje Y\nDesde allí, trazamos una **línea vertical** (paralela al eje Y)\n## Paso 2: Localizar la coordenada Y (segunda coordenada)\n- Si **b > 0** → subimos desde el origen\n- Si **b < 0** → bajamos desde el origen\n- Si **b = 0** → permanecemos sobre el eje X\n\nDesde allí, trazamos una **línea horizontal** (paralela al eje X)\n## Paso 3: Encontrar la intersección\nEl punto donde ambas líneas se cruzan es nuestro punto **(a, b)**"
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/ubicacion.png",
+                "alt": " punto estará a la derecha y arriba del origen, en el primer cuadrante",
+                "caption": " "
+              },
+              {
+                "type": "info",
+                "content": "🎯 **Distancias importantes**:\n- El valor absoluto de **a** (|a|) indica qué tan lejos está el punto del **eje Y**\n- El valor absoluto de **b** (|b|) indica qué tan lejos está el punto del **eje X**"
+              },
+              {
+                "type": "text",
+                "content": "## Ejemplo Práctico\n\nVamos a ubicar el punto **P = (−2, 1)** en el plano cartesiano.\n\n"
+              },
+              {
+                "type": "image",
+                "src": "./assets/capitulo1/ejemplo.png",
+                "alt": "Ubicación del punto P(-2, 1) en el plano cartesiano",
+                "caption": "Proceso de ubicación del punto P(-2, 1)"
+              },
+              {
+                "type": "text",
+                "content": "## Análisis del punto:\n- Primera coordenada: **a = −2** (negativo)\n- Segunda coordenada: **b = 1** (positivo)\n## Proceso paso a paso:\n\n**1.** Ubicamos **−2** en el eje X (dos unidades a la izquierda del origen)\n\n**2.** Desde −2, trazamos una **línea vertical** paralela al eje Y\n\n**3.** Ubicamos **1** en el eje Y (una unidad arriba del origen)\n\n**4.** Desde 1, trazamos una **línea horizontal** paralela al eje X\n\n**5.** El punto de intersección de ambas líneas es **P(−2, 1)**"
+              },
+              {
+                "type": "success",
+                "content": "✅ **Resultado**: Como **a = −2** (negativo) y **b = 1** (positivo), el punto se ubica en el **segundo cuadrante**, es decir, a la izquierda del eje Y y por encima del eje X."
+              },
+              {
+                "type": "text",
+                "content": "## Ejercicios para Practicar\n\n**Ahora es tu turno**. Toma tu papel y lápiz, dibuja un plano cartesiano y ubica los siguientes puntos:\n\n1. **A = (3, 2)**\n2. **B = (−1, −3)**\n3. **C = (0, 4)**\n4. **D = (2, −1)**\n5. **E = (−3, 0)**\n\nPara cada punto, identifica:\n- ¿En qué cuadrante se encuentra? (o si está sobre algún eje)\n- ¿Qué tan lejos está del eje X?\n- ¿Qué tan lejos está del eje Y?"
+              },
+              {
+                "type": "warning",
+                "content": "⏰ **Tómate tu tiempo**: No hay prisa. Es importante que practiques dibujando cada punto cuidadosamente.\n\nRecuerda: **LLaMaSabIA** puede ayudarte si tienes dudas sobre el proceso, pero es importante que hagas los ejercicios tú mismo."
+              },
+              {
+                "type": "text",
+                "content": "## Reflexión Final\n\nAntes de continuar a la siguiente hoja, asegúrate de que puedes:\n\n✓ Identificar los componentes del plano cartesiano\n✓ Ubicar puntos dados sus coordenadas (x, y)\n✓ Determinar en qué cuadrante se encuentra un punto\n✓ Entender el significado de cada coordenada\n\n**¿Listo?** En la siguiente hoja pondremos a prueba lo aprendido."
+              }
+            ]
+          },
+          "unlocked": false
+        },
+        {
+        "id": 4,
+        "title": "Test: Capítulo 1 - Plano Cartesiano",
+        "duration": "10 min",
+        "type": "test",
+        "requiresCompletion": 3,
+        "exercises": [
+          {
+            "id": 1,
+            "question": "¿En qué año fue creado el plano cartesiano y por quién?",
+            "type": "multiple_choice",
+            "options": [
+              "1637 por René Descartes",
+              "1687 por Isaac Newton",
+              "1737 por Leonhard Euler",
+              "1537 por Galileo Galilei"
+            ],
+            "correct": 0,
+            "explanation": "El plano cartesiano fue creado en 1637 por el filósofo y matemático francés René Descartes."
+          },
+          {
+            "id": 2,
+            "question": "¿Cuál es el nombre del eje horizontal del plano cartesiano?",
+            "type": "multiple_choice",
+            "options": [
+              "Eje de ordenadas",
+              "Eje de abscisas",
+              "Eje Y",
+              "Eje principal"
+            ],
+            "correct": 1,
+            "explanation": "El eje horizontal se llama eje X o eje de abscisas."
+          },
+          {
+            "id": 3,
+            "question": "¿Qué representa el punto (0, 0) en el plano cartesiano?",
+            "type": "multiple_choice",
+            "options": [
+              "El primer cuadrante",
+              "El centro del plano",
+              "El origen",
+              "El punto final"
+            ],
+            "correct": 2,
+            "explanation": "El punto (0, 0) se llama origen y es donde se cruzan los ejes X e Y."
+          },
+          {
+            "id": 4,
+            "question": "Si un punto tiene coordenadas P = (3, -2), ¿en qué cuadrante se encuentra?",
+            "type": "multiple_choice",
+            "options": [
+              "Primer cuadrante",
+              "Segundo cuadrante",
+              "Tercer cuadrante",
+              "Cuarto cuadrante"
+            ],
+            "correct": 3,
+            "explanation": "Como x = 3 (positivo) y y = -2 (negativo), el punto se encuentra en el cuarto cuadrante (derecha y abajo del origen)."
+          },
+          {
+            "id": 5,
+            "question": "¿En qué cuadrante se ubica un punto con coordenadas negativas en ambos ejes?",
+            "type": "multiple_choice",
+            "options": [
+              "Primer cuadrante",
+              "Segundo cuadrante",
+              "Tercer cuadrante",
+              "Cuarto cuadrante"
+            ],
+            "correct": 2,
+            "explanation": "El tercer cuadrante contiene puntos donde tanto x como y son negativos (izquierda y abajo del origen)."
+          },
+          {
+            "id": 6,
+            "question": "Si un punto está ubicado en (-4, 0), ¿dónde se encuentra?",
+            "type": "multiple_choice",
+            "options": [
+              "En el eje X",
+              "En el eje Y",
+              "En el primer cuadrante",
+              "En el tercer cuadrante"
+            ],
+            "correct": 0,
+            "explanation": "Cuando la coordenada y = 0, el punto está sobre el eje X. En este caso, 4 unidades a la izquierda del origen."
+          },
+          {
+            "id": 7,
+            "question": "Para ubicar el punto (2, 3), ¿qué movimiento hacemos primero desde el origen?",
+            "type": "multiple_choice",
+            "options": [
+              "3 unidades arriba",
+              "2 unidades a la derecha",
+              "2 unidades arriba",
+              "3 unidades a la derecha"
+            ],
+            "correct": 1,
+            "explanation": "Siempre ubicamos primero la coordenada x (horizontal). En este caso, nos movemos 2 unidades a la derecha del origen."
+          },
+          {
+            "id": 8,
+            "question": "¿Qué indica el valor absoluto de la coordenada x de un punto?",
+            "type": "multiple_choice",
+            "options": [
+              "Qué tan lejos está del eje X",
+              "Qué tan lejos está del eje Y",
+              "En qué cuadrante está",
+              "La distancia al origen"
+            ],
+            "correct": 1,
+            "explanation": "El valor absoluto de x (|x|) indica la distancia horizontal del punto al eje Y."
+          },
+          {
+            "id": 9,
+            "question": "¿Cuál es la notación formal del plano cartesiano?",
+            "type": "multiple_choice",
+            "options": [
+              "ℝ",
+              "ℝ × ℝ = ℝ²",
+              "ℝ³",
+              "X × Y"
+            ],
+            "correct": 1,
+            "explanation": "El plano cartesiano se identifica formalmente como ℝ × ℝ = ℝ², el producto cartesiano de ℝ consigo mismo."
+          },
+          {
+            "id": 10,
+            "question": "Si el punto Q = (-3, 5), ¿cuál afirmación es correcta?",
+            "type": "multiple_choice",
+            "options": [
+              "Está 3 unidades a la derecha y 5 arriba",
+              "Está 3 unidades a la izquierda y 5 arriba",
+              "Está 3 unidades arriba y 5 a la izquierda",
+              "Está en el primer cuadrante"
+            ],
+            "correct": 1,
+            "explanation": "x = -3 significa 3 unidades a la izquierda del origen, y = 5 significa 5 unidades arriba. El punto está en el segundo cuadrante."
+          }
+        ],
+        "unlocked": false
+      }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Proyecto del curso",
+      "sheets": [
+        {
+          "id": 1,
+          "title": "Sprint 1 - Proyecto",
+          "duration": "Proyecto - 1 ejercicio",
+          "type": "content",
+          "content": {
+            "sections": [
+              {
+                      "type": "text",
+                      "content": "# Proyecto Final: Aplicación Práctica\n\nAhora que has completado el módulo de fundamentos, es momento de poner en práctica lo aprendido en un proyecto interactivo."
+                    },
+                    {
+                      "type": "info",
+                      "content": "💡 Este proyecto te permitirá aplicar los conceptos aprendidos sobre el plano cartesiano en un entorno interactivo de Jupyter Notebook."
+                    },
+                    {
+                      "type": "warning",
+                      "content": "⚠️ Asegúrate de tener Jupyter Notebook ejecutándose en tu sistema antes de comenzar."
+                    },
+                    {
+                      "type": "text",
+                      "content": "## Instrucciones\n\n1. Haz clic en el botón 'Abrir Proyecto en Jupyter' a continuación\n2. Se abrirá el notebook PROYECTO_SPRINT1.ipynb\n3. Sigue las instrucciones paso a paso en el notebook\n4. Completa los ejercicios interactivos"
+                    },
+                    {
+                      "type": "html",
+                      "content": "<div class='jupyter-project-button' style='text-align: center; margin: 30px 0;'><button onclick=\"window.electronAPI.openExternal('http://localhost:8888/notebooks/PROYECTO_SPRINT1.ipynb')\" style='padding: 16px 32px; background: linear-gradient(135deg, #F97316, #EA580C); border: none; border-radius: 12px; color: white; font-size: 16px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);'>🚀 Abrir Proyecto en Jupyter</button></div>"
+                    },
+                    {
+                      "type": "text",
+                      "content": "## Objetivos del Proyecto\n\n1. Visualizar puntos en el plano cartesiano\n2. Crear gráficas interactivas\n3. Analizar relaciones entre coordenadas\n4. Implementar conceptos básicos aprendidos"
+                    },
+                    {
+                      "type": "success",
+                      "content": "✨ ¡Buena suerte con tu proyecto! No olvides que puedes consultar el material del curso si necesitas repasar algún concepto."
+                    }
+            ]
+          },
+          "unlocked": true
+    }]
+      }   
+    ]
+  }
+  

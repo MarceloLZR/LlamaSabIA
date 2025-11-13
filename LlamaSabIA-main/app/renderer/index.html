@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLaMasabIA - Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">🦙</div>
+        <h2>LLaMasabIA</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="chat">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Chat</span>
+        </button>
+        <button class="nav-item" data-view="courses">
+          <span class="nav-icon">📚</span>
+          <span class="nav-text">Cursos</span>
+        </button>
+        <button class="nav-item" data-view="about">
+          <span class="nav-icon">ℹ️</span>
+          <span class="nav-text">Acerca de</span>
+        </button>
+        <button class="nav-item" data-view="settings">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">Configuración</span>
+        </button>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="status-indicator">
+          <div class="status-dot" id="statusDot"></div>
+          <span id="statusText">Verificando...</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Vista de Chat -->
+      <div class="view" id="chatView">
+        <div class="chat-header">
+          <h1>Asistente IA Offline</h1>
+          <p class="subtitle">Conversación 100% privada y local</p>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+          <div class="message assistant">
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <div class="message-text">
+                ¡Hola! Soy tu asistente de IA funcionando completamente offline. 
+                ¿En qué puedo ayudarte hoy?
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-input-container">
+          <textarea 
+            id="chatInput" 
+            placeholder="Escribe tu mensaje aquí..."
+            rows="1"
+          ></textarea>
+          <button id="sendButton" class="send-button">
+            <span>Enviar</span>
+            <span class="shortcut">↵</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Vista de Cursos (ACTIVA) -->
+      <div class="view hidden" id="coursesView">
+        <!-- El contenido se genera dinámicamente por course-viewer.js -->
+      </div>
+
+      <!-- Vista Acerca de -->
+      <div class="view hidden" id="aboutView">
+        <div class="view-header">
+          <h1>ℹ️ Acerca de LLaMasabIA</h1>
+        </div>
+        
+        <div class="about-content">
+          <div class="info-card">
+            <h3>🎯 Misión</h3>
+            <p>
+              Llevar Inteligencia Artificial educativa a zonas sin acceso a internet,
+              democratizando el conocimiento y las oportunidades de aprendizaje.
+            </p>
+          </div>
+          
+          <div class="info-card">
+            <h3>🔒 Privacidad Total</h3>
+            <p>
+              Todo funciona 100% offline. Tus conversaciones nunca salen de tu computadora.
+              Sin conexión a internet, sin tracking, sin almacenamiento en la nube.
+            </p>
+          </div>
+          
+          <div class="info-card">
+            <h3>⚙️ Tecnología</h3>
+            <ul>
+              <li><strong>Motor:</strong> llama.cpp</li>
+              <li><strong>Interfaz:</strong> Electron</li>
+              <li><strong>Modelos:</strong> GGUF (Llama/Phi/Mistral)</li>
+              <li><strong>Portabilidad:</strong> USB-ready</li>
+            </ul>
+          </div>
+          
+          <div class="info-card">
+            <h3>📖 Versión</h3>
+            <p>
+              <strong>LlamaSabIA v1.0.0</strong><br>
+              Desarrollado con ❤️ para la educación sin fronteras
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vista Configuración -->
+      <div class="view hidden" id="settingsView">
+        <div class="view-header">
+          <h1>⚙️ Configuración</h1>
+        </div>
+        
+        <div class="settings-content">
+          <div class="setting-group">
+            <h3>🤖 Modelo de IA</h3>
+            <div class="setting-item">
+              <label>Modelo Actual</label>
+              <input type="text" value="Detectado automáticamente" readonly>
+            </div>
+            <p class="setting-description">
+              El modelo se carga automáticamente desde la carpeta <code>models/</code>
+            </p>
+          </div>
+          
+          <div class="setting-group">
+            <h3>🎨 Apariencia</h3>
+            <div class="setting-item">
+              <label>Tema</label>
+              <select>
+                <option>Oscuro (por defecto)</option>
+                <option disabled>Claro (próximamente)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="setting-group">
+            <h3>🔧 Avanzado</h3>
+            <div class="setting-item">
+              <label>Puerto del Servidor</label>
+              <input type="number" value="8080" readonly>
+            </div>
+            <div class="setting-item">
+              <label>Tamaño de Contexto</label>
+              <input type="number" value="2048" readonly>
+            </div>
+            <p class="setting-description">
+              Configuración avanzada disponible en <code>app/main.js</code>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="courses/courses-manager.js"></script>
+  <script src="courses/course-viewer.js"></script>
+  <script src="renderer.js"></script>
+  
+  <!-- Inicializar cursos después de cargar todo -->
+  <script>
+    // Esperar a que todo esté listo
+    window.addEventListener('DOMContentLoaded', () => {
+      console.log('✅ DOM listo');
+      console.log('coursesManager:', typeof coursesManager);
+      console.log('courseViewer:', typeof courseViewer);
+      
+      // Inicializar courseViewer si no existe
+      if (typeof courseViewer === 'undefined') {
+        console.log('⚠️ Creando courseViewer...');
+        window.courseViewer = new CourseViewer('coursesView');
+      }
+    });
+  </script>
+</body>
+</html>
